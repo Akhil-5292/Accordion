@@ -1,4 +1,3 @@
-import MyAccordion from "./Components/MyAccordion/MyAccordion";
 import Accordion from "./Components/Accordion/Accordion";
 
 function App() {

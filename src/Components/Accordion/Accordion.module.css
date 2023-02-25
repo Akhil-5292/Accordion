@@ -9,10 +9,10 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: darkkhaki;
 }
 
 .container{
-  border: 1px solid;
   height: 50vh;
   width: 30vw;
 }
@@ -29,4 +29,16 @@
     align-items: center;
     border: 1px solid;
     margin: 15px;
+    background-color: salmon;
+    cursor: pointer;
+}
+
+.question button{
+    cursor: pointer;
+}
+
+.answer{
+    margin: 5px 15px;
+    background-color:sandybrown;
+    font-weight: 500;
 }

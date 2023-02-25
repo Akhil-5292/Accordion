@@ -5,25 +5,28 @@ import {questions} from '../ConstData/ConstData'
 
 export default function Accordion(){
     const[data,setData]=useState(questions)
-    const[show,setShow]=useState(false)
+    const[show,setShow]=useState(null)
 
-    const handleShow=()=>{
-        setShow(!show)
+    const handleShow=(i)=>{
+        if(show===i){
+      return setShow(null)
+        }
+        setShow(i)
     }
     return(
         <div className={style.wrapper}>
             <section className={style.container}>
                 <h1>Accordion </h1>
          {
-            data.map((x)=>{
+            data.map((x,i)=>{
                 return(
                     <>
-                    <div className={style.question} key={x.id}>
+                    <div  className={style.question} key={x.id}>
                         <h3>{x.question}</h3>
-                       <button onClick={handleShow}> { show ? '➖' : '➕'}</button>  
+                       <button onClick={()=>handleShow(i)}> { show===i ? '➖' : '➕'}</button>  
                     </div>
                     {
-                        show ?  <p className={style.answer}>{x.answer} </p> : ''
+                        show ?  <p className={style.answer}>{show===i ?  x.answer : ''} </p> : ''
                     }
                    
                     </>
