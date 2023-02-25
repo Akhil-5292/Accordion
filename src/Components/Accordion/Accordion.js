@@ -21,12 +21,12 @@ export default function Accordion(){
             data.map((x,i)=>{
                 return(
                     <>
-                    <div  className={style.question} key={x.id}>
+                    <div onClick={()=>handleShow(i)} className={style.question} key={x.id}>
                         <h3>{x.question}</h3>
                        <button onClick={()=>handleShow(i)}> { show===i ? '➖' : '➕'}</button>  
                     </div>
                     {
-                        show ?  <p className={style.answer}>{show===i ?  x.answer : ''} </p> : ''
+                        show===i ?  <p className={style.answer}> {x.answer} </p> : ''
                     }
                    
                     </>
